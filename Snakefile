@@ -9,6 +9,13 @@
 # produced by each rule to unique directories.
 # allowable: paul, moignard, pbmc3k
 rule download_data:
+    params:
+        dataset = "pbmc3k"
+    output:
+        out = "data/pbmc3k.h5ad"
+
+    script:
+        "scripts/download_data.py"
 
 # This rule should preprocess downloaded data by calling the `preprocess.py`
 # Python script.

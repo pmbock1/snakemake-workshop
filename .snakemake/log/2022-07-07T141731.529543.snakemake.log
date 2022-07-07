@@ -1,0 +1,32 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+download_data        1              1              1
+total                1              1              1
+
+Select jobs to execute...
+
+[Thu Jul  7 14:17:31 2022]
+rule download_data:
+    output: data/pbmc3k.h5ad
+    jobid: 0
+    reason: Missing output files: data/pbmc3k.h5ad
+    resources: tmpdir=/scratch/5722254.1.y
+
+[Thu Jul  7 14:17:31 2022]
+Error in rule download_data:
+    jobid: 0
+    output: data/pbmc3k.h5ad
+
+RuleException:
+NameError in line 18 of /projectnb2/bubpwtf/pbock/snakemake-workshop/Snakefile:
+The name 'dataset' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}
+  File "/projectnb2/bubpwtf/pbock/snakemake-workshop/Snakefile", line 18, in __rule_download_data
+  File "/projectnb/bubpwtf/pbock/.conda/envs/workshop/lib/python3.9/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-07-07T141731.529543.snakemake.log
